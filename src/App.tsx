@@ -1,35 +1,111 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useExercises } from "./hooks/useExercises";
+import logo from "./assets/pelvic_power_logo.webp";
+import "./App.css";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const {
+    dailyExercises,
+    evenDayExercises,
+    isEvenDay,
+    toggleSet,
+    resetExercises,
+  } = useExercises();
+
+  const currentDate = new Date().toLocaleDateString("en-US", {
+    month: "numeric",
+    day: "numeric",
+    year: "2-digit",
+  });
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
+    <div className="container">
+      <div className="logo-container">
+        <img src={logo} className="logo" alt="Pelvic Power" />
+        <button className="reset-button" onClick={resetExercises}>
+          Reset
         </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+
+      <div className="scroll-view">
+        {/* Daily Exercises Section */}
+        <div className="section-header-row">
+          <span className="section-header">Daily Exercises</span>
+          <span className="date-text">{currentDate}</span>
+        </div>
+        {dailyExercises.map((exercise) => (
+          <div key={exercise.id} className="exercise-item">
+            <div className="checkbox-container">
+              {exercise.completedSets.map((isCompleted, index) => (
+                <button
+                  key={index}
+                  className="checkbox"
+                  onClick={() => toggleSet(exercise.id, index)}
+                >
+                  {isCompleted && <div className="checkbox-checked" />}
+                </button>
+              ))}
+            </div>
+            <div className="exercise-info">
+              <span
+                className={
+                  "exercise-name" + (exercise.completed ? " completed" : "")
+                }
+              >
+                {exercise.name}
+              </span>
+              <span
+                className={
+                  "exercise-reps" + (exercise.completed ? " completed" : "")
+                }
+              >
+                {exercise.reps}
+              </span>
+            </div>
+          </div>
+        ))}
+
+        {/* Even Day Exercises Section - only show on even days */}
+        {isEvenDay && (
+          <>
+            <div className="section-header-row">
+              <span className="section-header">Every Other Day Exercises</span>
+            </div>
+            {evenDayExercises.map((exercise) => (
+              <div key={exercise.id} className="exercise-item">
+                <div className="checkbox-container">
+                  {exercise.completedSets.map((isCompleted, index) => (
+                    <button
+                      key={index}
+                      className="checkbox"
+                      onClick={() => toggleSet(exercise.id, index)}
+                    >
+                      {isCompleted && <div className="checkbox-checked" />}
+                    </button>
+                  ))}
+                </div>
+                <div className="exercise-info">
+                  <span
+                    className={
+                      "exercise-name" + (exercise.completed ? " completed" : "")
+                    }
+                  >
+                    {exercise.name}
+                  </span>
+                  <span
+                    className={
+                      "exercise-reps" + (exercise.completed ? " completed" : "")
+                    }
+                  >
+                    {exercise.reps}
+                  </span>
+                </div>
+              </div>
+            ))}
+          </>
+        )}
+      </div>
+    </div>
+  );
 }
 
-export default App
+export default App;
