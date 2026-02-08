@@ -8,7 +8,6 @@ function App() {
     evenDayExercises,
     isEvenDay,
     toggleSet,
-    resetExercises,
   } = useExercises();
 
   const currentDate = new Date().toLocaleDateString("en-US", {
@@ -21,9 +20,6 @@ function App() {
     <div className="container">
       <div className="logo-container">
         <img src={logo} className="logo" alt="Pelvic Power" />
-        <button className="reset-button" onClick={resetExercises}>
-          Reset
-        </button>
       </div>
 
       <div className="scroll-view">
@@ -68,7 +64,7 @@ function App() {
         {isEvenDay && (
           <>
             <div className="section-header-row">
-              <span className="section-header">Every Other Day Exercises</span>
+              <span className="section-header">Even Day Exercises</span>
             </div>
             {evenDayExercises.map((exercise) => (
               <div key={exercise.id} className="exercise-item">

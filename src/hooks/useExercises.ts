@@ -35,14 +35,9 @@ export function useExercises() {
     );
   };
 
-  const resetExercises = () => {
-    localStorage.removeItem(STORAGE_KEY);
-    setExercises(initialExercises);
-  };
-
   const dailyExercises = exercises.filter((ex) => ex.frequency === "daily");
   const evenDayExercises = exercises.filter((ex) => ex.frequency === "even");
   const isEvenDay = new Date().getDate() % 2 === 0;
 
-  return { dailyExercises, evenDayExercises, isEvenDay, toggleSet, resetExercises };
+  return { dailyExercises, evenDayExercises, isEvenDay, toggleSet };
 }
