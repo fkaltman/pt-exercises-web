@@ -7,7 +7,7 @@ body {
 .container {
   min-height: 100vh;
   background-color: #8fd9d4;
-  padding: 20px 20px 0 20px;
+  padding: 10px 20px 0 20px;
   max-width: 480px;
   margin: 0 auto;
 }
@@ -16,8 +16,8 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 16px;
-  margin-top: 16px;
+  margin-bottom: 20px;
+  margin-top: 10px;
 }
 
 .logo {
@@ -115,4 +115,11 @@ body {
 .completed {
   color: #999;
   text-decoration: line-through;
+}
+
+@media (min-width: 481px) {
+  .logo-container {
+    margin-top: 26px;
+    margin-bottom: 26px;
+  }
 }
