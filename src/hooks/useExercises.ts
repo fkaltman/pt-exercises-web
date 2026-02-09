@@ -3,7 +3,7 @@ import { initialExercises, type Exercise } from "../data/exercises";
 
 const STORAGE_KEY = "@exercises";
 const VERSION_KEY = "@exercises_version";
-const CURRENT_VERSION = "2"; // Increment this when you change the exercise structure
+const CURRENT_VERSION = "4"; // Increment when you change the exercise structure
 
 export function useExercises() {
   const [exercises, setExercises] = useState<Exercise[]>(initialExercises);
