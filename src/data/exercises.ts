@@ -3,7 +3,7 @@ export type Exercise = {
   name: string;
   reps: string;
   completed: boolean;
-  frequency: "daily" | "even";
+  frequency: "daily" | "odd";
   sets: number;
   completedSets: boolean[];
 };
@@ -52,7 +52,7 @@ export const initialExercises: Exercise[] = [
     name: "Single Leg Bridge 12lbs",
     reps: "3 sets of 8 each leg",
     completed: false,
-    frequency: "even",
+    frequency: "odd",
     sets: 1,
     completedSets: [false],
   },
@@ -61,7 +61,7 @@ export const initialExercises: Exercise[] = [
     name: "Superman",
     reps: "5x (hold for 10 seconds)",
     completed: false,
-    frequency: "even",
+    frequency: "odd",
     sets: 1,
     completedSets: [false],
   },
@@ -70,7 +70,7 @@ export const initialExercises: Exercise[] = [
     name: "Step up",
     reps: "3 sets of 8 each leg",
     completed: false,
-    frequency: "even",
+    frequency: "odd",
     sets: 1,
     completedSets: [false],
   },
@@ -79,7 +79,7 @@ export const initialExercises: Exercise[] = [
     name: "Squats with 20lbs",
     reps: "3 sets of 8 each leg",
     completed: false,
-    frequency: "even",
+    frequency: "odd",
     sets: 1,
     completedSets: [false],
   },

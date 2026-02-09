@@ -36,8 +36,8 @@ export function useExercises() {
   };
 
   const dailyExercises = exercises.filter((ex) => ex.frequency === "daily");
-  const evenDayExercises = exercises.filter((ex) => ex.frequency === "even");
-  const isEvenDay = new Date().getDate() % 2 === 0;
+  const oddDayExercises = exercises.filter((ex) => ex.frequency === "odd");
+  const isOddDay = new Date().getDate() % 1 === 0;
 
-  return { dailyExercises, evenDayExercises, isEvenDay, toggleSet };
+  return { dailyExercises, oddDayExercises, isOddDay, toggleSet };
 }

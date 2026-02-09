@@ -5,8 +5,8 @@ import "./App.css";
 function App() {
   const {
     dailyExercises,
-    evenDayExercises,
-    isEvenDay,
+    oddDayExercises,
+    isOddDay,
     toggleSet,
   } = useExercises();
 
@@ -60,13 +60,13 @@ function App() {
           </div>
         ))}
 
-        {/* Even Day Exercises Section - only show on even days */}
-        {isEvenDay && (
+        {/* Odd Day Exercises Section - only show on odd days */}
+        {isOddDay && (
           <>
             <div className="section-header-row">
-              <span className="section-header">Even Day Exercises</span>
+              <span className="section-header">Odd Day Exercises</span>
             </div>
-            {evenDayExercises.map((exercise) => (
+            {oddDayExercises.map((exercise) => (
               <div key={exercise.id} className="exercise-item">
                 <div className="checkbox-container">
                   {exercise.completedSets.map((isCompleted, index) => (
