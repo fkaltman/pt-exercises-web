@@ -8,9 +8,7 @@ export type Exercise = {
   completedSets: boolean[];
 };
 
-
 export const initialExercises: Exercise[] = [
-
   {
     id: 1,
     name: "Reverse Kegels",
@@ -18,7 +16,7 @@ export const initialExercises: Exercise[] = [
     completed: false,
     frequency: "daily",
     sets: 3,
-    completedSets: [false, false, false],
+    completedSets: Array(3).fill(false),
   },
   {
     id: 2,
@@ -27,7 +25,7 @@ export const initialExercises: Exercise[] = [
     completed: false,
     frequency: "daily",
     sets: 3,
-    completedSets: [false, false, false],
+    completedSets: Array(3).fill(false),
   },
   {
     id: 3,
@@ -36,7 +34,7 @@ export const initialExercises: Exercise[] = [
     completed: false,
     frequency: "daily",
     sets: 3,
-    completedSets: [false, false, false],
+    completedSets: Array(3).fill(false),
   },
   {
     id: 4,
@@ -45,7 +43,7 @@ export const initialExercises: Exercise[] = [
     completed: false,
     frequency: "daily",
     sets: 3,
-    completedSets: [false, false, false],
+    completedSets: Array(3).fill(false),
   },
   {
     id: 5,
@@ -54,7 +52,7 @@ export const initialExercises: Exercise[] = [
     completed: false,
     frequency: "odd",
     sets: 3,
-    completedSets: [false, false, false],
+    completedSets: Array(3).fill(false),
   },
   {
     id: 6,
@@ -63,7 +61,7 @@ export const initialExercises: Exercise[] = [
     completed: false,
     frequency: "odd",
     sets: 3,
-    completedSets: [false, false, false],
+    completedSets: Array(3).fill(false),
   },
   {
     id: 7,
@@ -72,7 +70,7 @@ export const initialExercises: Exercise[] = [
     completed: false,
     frequency: "odd",
     sets: 3,
-    completedSets: [false, false, false],
+    completedSets: Array(3).fill(false),
   },
   {
     id: 8,
@@ -81,7 +79,7 @@ export const initialExercises: Exercise[] = [
     completed: false,
     frequency: "odd",
     sets: 3,
-    completedSets: [false, false, false],
+    completedSets: Array(3).fill(false),
   },
   {
     id: 9,
@@ -90,6 +88,6 @@ export const initialExercises: Exercise[] = [
     completed: false,
     frequency: "odd",
     sets: 3,
-    completedSets: [false, false, false],
+    completedSets: Array(3).fill(false),
   },
 ];

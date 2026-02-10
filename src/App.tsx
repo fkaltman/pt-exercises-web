@@ -3,12 +3,8 @@ import logo from "./assets/pelvic_power_logo.webp";
 import "./App.css";
 
 function App() {
-  const {
-    dailyExercises,
-    oddDayExercises,
-    isOddDay,
-    toggleSet,
-  } = useExercises();
+  const { dailyExercises, oddDayExercises, isOddDay, toggleSet } =
+    useExercises();
 
   const currentDate = new Date().toLocaleDateString("en-US", {
     month: "numeric",
