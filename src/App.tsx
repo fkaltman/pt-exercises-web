@@ -1,10 +1,12 @@
 import { useExercises } from "./hooks/useExercises";
+import { useWakeLock } from "./hooks/useWakeLock";
 import logo from "./assets/pelvic_power_logo.webp";
 import "./App.css";
 
 function App() {
   const { dailyExercises, oddDayExercises, isOddDay, toggleSet } =
     useExercises();
+  useWakeLock();
 
   const currentDate = new Date().toLocaleDateString("en-US", {
     month: "numeric",
