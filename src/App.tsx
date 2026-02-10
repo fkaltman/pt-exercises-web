@@ -6,7 +6,7 @@ import "./App.css";
 function App() {
   const { dailyExercises, oddDayExercises, isOddDay, toggleSet } =
     useExercises();
-  useWakeLock();
+  const { isActive } = useWakeLock();
 
   const currentDate = new Date().toLocaleDateString("en-US", {
     month: "numeric",
@@ -18,6 +18,11 @@ function App() {
     <div className="container">
       <div className="logo-container">
         <img src={logo} className="logo" alt="Pelvic Power" />
+        {isActive && (
+          <span className="wake-lock-badge" title="Screen staying awake">
+            ☀️
+          </span>
+        )}
       </div>
 
       <div className="scroll-view">
