@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState } from "react";
 import { useExercises } from "./hooks/useExercises";
 import { useWakeLock } from "./hooks/useWakeLock";
 import logo from "./assets/pelvic_power_logo.webp";
@@ -20,11 +20,6 @@ function App() {
     <div className="container">
       <div className="logo-container">
         <img src={logo} className="logo" alt="Pelvic Power" />
-        {isActive && (
-          <span className="wake-lock-badge" title="Screen staying awake">
-            ☀️
-          </span>
-        )}
       </div>
 
       <div className="scroll-view">
@@ -78,7 +73,7 @@ function App() {
               <span className="toggle-switch"></span>
               <span className="toggle-text"> Show odd day exercises</span>
             </label>
-            </div>
+          </div>
         )}
 
         {/* Odd Day Exercises Section - only show on odd days */}
@@ -119,6 +114,12 @@ function App() {
               </div>
             ))}
           </>
+        )}
+        {/* Wake lock indicator at bottom */}
+        {isActive && (
+          <div className="wake-lock-indicator">
+            <span title="Screen staying awake">☀️ Keeping screen awake</span>
+          </div>
         )}
       </div>
     </div>
