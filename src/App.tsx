@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { useExercises } from "./hooks/useExercises";
 import { useWakeLock } from "./hooks/useWakeLock";
 import logo from "./assets/pelvic_power_logo.webp";
@@ -7,6 +8,7 @@ function App() {
   const { dailyExercises, oddDayExercises, isOddDay, toggleSet } =
     useExercises();
   const { isActive } = useWakeLock();
+  const [showOddExercises, setShowOddExercises] = useState(false);
 
   const currentDate = new Date().toLocaleDateString("en-US", {
     month: "numeric",
@@ -63,8 +65,24 @@ function App() {
           </div>
         ))}
 
-        {/* Odd Day Exercises Section - only show on odd days */}
+        {/* Toggle for even days to view odd exercises */}
         {isOddDay && (
+          <div className="toggle-container">
+            <label className="toggle-label">
+              <input
+                type="checkbox"
+                checked={showOddExercises}
+                onChange={(e) => setShowOddExercises(e.target.checked)}
+                className="toggle-checkbox"
+              />
+              <span className="toggle-switch"></span>
+              <span className="toggle-text"> Show odd day exercises</span>
+            </label>
+            </div>
+        )}
+
+        {/* Odd Day Exercises Section - only show on odd days */}
+        {(isOddDay || showOddExercises) && (
           <>
             <div className="section-header-row">
               <span className="section-header">Odd Day Exercises</span>
