@@ -66,7 +66,7 @@ function App() {
         ))}
 
         {/* Toggle for even days to view odd exercises */}
-        {isOddDay && (
+        {!isOddDay && (
           <div className="toggle-container">
             <label className="toggle-label">
               <input
