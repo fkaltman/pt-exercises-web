@@ -47,8 +47,8 @@ export const initialExercises: Exercise[] = [
   },
   {
     id: 5,
-    name: "Single Leg Bridge 12lbs",
-    reps: "8x each leg",
+    name: "Single Leg Bridge",
+    reps: "8x each leg - 12lbs on hips",
     completed: false,
     frequency: "odd",
     sets: 3,
@@ -74,8 +74,8 @@ export const initialExercises: Exercise[] = [
   },
   {
     id: 8,
-    name: "Squats with 20lbs",
-    reps: "8x each leg",
+    name: "Squats",
+    reps: " Hold one weight - 20lbs",
     completed: false,
     frequency: "odd",
     sets: 3,
@@ -83,7 +83,7 @@ export const initialExercises: Exercise[] = [
   },
   {
     id: 9,
-    name: "Suitcase Carry with 20lbs",
+    name: "20 lbs Suitcase Carry",
     reps: "Walk ~20ft each side",
     completed: false,
     frequency: "odd",
