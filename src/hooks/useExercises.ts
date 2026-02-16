@@ -3,6 +3,7 @@ import { initialExercises, type Exercise } from "../data/exercises";
 
 const STORAGE_KEY = "@exercises";
 const VERSION_KEY = "@exercises_version";
+const DATE_KEY = "@exercises_date";
 const CURRENT_VERSION = "4"; // Increment when you change the exercise structure
 
 export function useExercises() {
@@ -18,6 +19,20 @@ export function useExercises() {
     } else {
       const stored = localStorage.getItem(STORAGE_KEY);
       if (stored) setExercises(JSON.parse(stored));
+    }
+
+    // Reset checkboxes if the date has changed
+    const today = new Date().toDateString();
+    const storedDate = localStorage.getItem(DATE_KEY);
+    if (storedDate !== today) {
+      localStorage.setItem(DATE_KEY, today);
+      setExercises((prev) =>
+        prev.map((ex) => ({
+          ...ex,
+          completed: false,
+          completedSets: ex.completedSets.map(() => false),
+        })),
+      );
     }
   }, []);
 
