@@ -1,3 +1,5 @@
+![PT Exercises Web](public/favicon.svg)
+
 # PT Exercises Web
 
 A personal physical therapy exercise tracker built with React and TypeScript.
