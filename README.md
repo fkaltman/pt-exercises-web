@@ -1,4 +1,4 @@
-![PT Exercises Web](public/favicon.svg)
+<img src="public/favicon.svg" alt="PT Exercises Web" width="48" />
 
 # PT Exercises Web
 
