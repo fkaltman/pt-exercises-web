@@ -108,4 +108,13 @@ export const initialExercises: Exercise[] = [
     sets: 3,
     completedSets: Array(3).fill(false),
   },
+  {
+    id: 12,
+    name: "Single leg sit/stand",
+    reps: "10 each side",
+    completed: false,
+    frequency: "odd",
+    sets: 3,
+    completedSets: Array(3).fill(false),
+  },
 ];
