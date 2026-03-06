@@ -56,6 +56,16 @@ export const initialExercises: Exercise[] = [
   },
   {
     id: 6,
+    name: "Door knob hold & squat",
+    reps: "8x (as needed)",
+    completed: false,
+    frequency: "daily",
+    sets: 3,
+    completedSets: Array(3).fill(false),
+  },
+
+  {
+    id: 7,
     name: "Deadlift",
     reps: "8x - 35lbs",
     completed: false,
@@ -64,7 +74,7 @@ export const initialExercises: Exercise[] = [
     completedSets: Array(3).fill(false),
   },
   {
-    id: 7,
+    id: 8,
     name: "Single Leg Bridge",
     reps: "8x each leg - 12lbs on hips",
     completed: false,
@@ -73,7 +83,7 @@ export const initialExercises: Exercise[] = [
     completedSets: Array(3).fill(false),
   },
   {
-    id: 8,
+    id: 9,
     name: "Superman",
     reps: "Hold for 20 seconds",
     completed: false,
@@ -82,7 +92,7 @@ export const initialExercises: Exercise[] = [
     completedSets: Array(3).fill(false),
   },
   {
-    id: 9,
+    id: 10,
     name: "Step Up or Lateral Step Up",
     reps: "8x each leg",
     completed: false,
@@ -91,7 +101,7 @@ export const initialExercises: Exercise[] = [
     completedSets: Array(3).fill(false),
   },
   {
-    id: 10,
+    id: 11,
     name: "Squats",
     reps: " Hold one weight - 20lbs",
     completed: false,
@@ -100,7 +110,7 @@ export const initialExercises: Exercise[] = [
     completedSets: Array(3).fill(false),
   },
   {
-    id: 11,
+    id: 12,
     name: "20 lbs Suitcase Carry",
     reps: "Walk ~20ft each side",
     completed: false,
@@ -109,7 +119,7 @@ export const initialExercises: Exercise[] = [
     completedSets: Array(3).fill(false),
   },
   {
-    id: 12,
+    id: 13,
     name: "Single leg sit/stand",
     reps: "10 each side",
     completed: false,
